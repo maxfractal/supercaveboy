@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprites name="player">
       <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_damage</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
