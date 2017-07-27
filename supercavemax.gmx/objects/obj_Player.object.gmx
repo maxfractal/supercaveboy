@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///initialize the player object
 
+
+
 //instance variable
 spd = 4;
 
@@ -62,20 +64,26 @@ global.faster_spd = 10;
           <argument>
             <kind>1</kind>
             <string>///Control the player
+var right = keyboard_check(vk_right);
+var left = keyboard_check(vk_left);
+var up = keyboard_check(vk_up);
+var down = keyboard_check(vk_down);
 
-if (keyboard_check(vk_right)) {
+
+
+if (right) {
     x += spd;
 }
 
-if (keyboard_check(vk_left)) {
+if (left) {
     x -= spd;
 }
 
-if (keyboard_check(vk_up)) {
+if (up) {
     y -= spd;
 }
 
-if (keyboard_check(vk_down)) {
+if (down) {
     y += spd;
 }
 </string>
