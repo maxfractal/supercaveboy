@@ -31,13 +31,15 @@
 
 //instance variable
 spd = 4;
+hspd = 0;
+vspd = 0;
 
 //local variable
-var faster_spd = 10;
+//var faster_spd = 10;
 //spd = faster_spd;
 
 //global variable
-global.faster_spd = 10;
+//global.faster_spd = 10;
 
 //This is another comment
 //Three lines at the top will show the comment in the action window.
@@ -69,23 +71,52 @@ var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 
-
-
+//adding wall detecting &amp;&amp;
+//place_meeting checks to see if an 
+//object is there
 if (right) {
-    x += spd;
+    hspd = spd;
 }
 
 if (left) {
-    x -= spd;
+    hspd = -spd;
 }
 
 if (up) {
-    y -= spd;
+    vspd = -spd;
 }
 
 if (down) {
-    y += spd;
+    vspd = spd;
 }
+
+//friction
+if (!right &amp;&amp; !left) {
+    hspd = 0;
+    }
+if (!up &amp;&amp; !down) {
+    vspd = 0;
+    }
+         
+//Horizontal Collisions
+if (place_meeting(x+hspd, y, Solid)) {
+    while (!place_meeting(x+sign(hspd), y, Solid)) {
+        x+= sign(hspd);
+        }
+    hspd = 0;
+}
+x += hspd;
+
+//Vertical Collisions
+if (place_meeting(x, y+vspd, Solid)) {
+    while (!place_meeting(x, y+sign(vspd), Solid)) {
+        y+= sign(vspd);
+        }
+    vspd = 0;
+    }
+y += vspd;
+
+
 </string>
           </argument>
         </arguments>
