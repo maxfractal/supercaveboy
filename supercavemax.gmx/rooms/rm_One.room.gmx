@@ -12,6 +12,9 @@
   <showcolour>-1</showcolour>
   <code>///Room Code
 {
+    //not part of the course
+    show_debug_message("Hi Max! Go find Slyvester!");
+    
     //defines an instanced string variable.
     str_text = "Hello Xris and Max!";
     
