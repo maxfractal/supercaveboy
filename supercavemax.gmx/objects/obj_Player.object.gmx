@@ -30,9 +30,11 @@
 
 
 //instance variable
-spd = 4;
+spd = 5;
 hspd = 0;
 vspd = 0;
+grav = 1.5;
+
 
 //local variable
 //var faster_spd = 10;
@@ -71,6 +73,12 @@ var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 
+if (!place_meeting(x, y+1, solid)) {
+    vspd += grav;
+    } else {
+    vspd = 0;
+    }
+    
 //adding wall detecting &amp;&amp;
 //place_meeting checks to see if an 
 //object is there
@@ -82,6 +90,8 @@ if (left) {
     hspd = -spd;
 }
 
+//removed in the gravity section
+/*
 if (up) {
     vspd = -spd;
 }
@@ -89,6 +99,7 @@ if (up) {
 if (down) {
     vspd = spd;
 }
+*/
 
 //friction
 if (!right &amp;&amp; !left) {
