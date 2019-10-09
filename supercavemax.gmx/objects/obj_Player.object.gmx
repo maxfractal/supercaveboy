@@ -73,7 +73,7 @@ var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
 var down = keyboard_check(vk_down);
 
-if (!place_meeting(x, y+1, solid)) {
+if (!place_meeting(x, y+1, Solid)) {
     vspd += grav;
     } else {
     vspd = 0;
@@ -95,10 +95,11 @@ if (left) {
 if (!right &amp;&amp; !left) {
     hspd = 0;
     }
+    /*
 if (!up &amp;&amp; !down) {
     vspd = 0;
     }
-         
+     */    
 //Horizontal Collisions
 if (place_meeting(x+hspd, y, Solid)) {
     while (!place_meeting(x+sign(hspd), y, Solid)) {
