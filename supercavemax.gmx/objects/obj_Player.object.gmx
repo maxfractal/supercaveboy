@@ -77,11 +77,13 @@ if (!place_meeting(x, y+1, solid)) {
     vspd += grav;
     } else {
     vspd = 0;
-    }
     
-//adding wall detecting &amp;&amp;
-//place_meeting checks to see if an 
-//object is there
+    //jumping code
+    if (up) {
+        vspd = -16;
+        }
+    }
+
 if (right) {
     hspd = spd;
 }
@@ -89,18 +91,6 @@ if (right) {
 if (left) {
     hspd = -spd;
 }
-
-//removed in the gravity section
-/*
-if (up) {
-    vspd = -spd;
-}
-
-if (down) {
-    vspd = spd;
-}
-*/
-
 //friction
 if (!right &amp;&amp; !left) {
     hspd = 0;

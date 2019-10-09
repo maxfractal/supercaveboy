@@ -17,6 +17,7 @@
     
     //defines an instanced string variable.
     str_text = "Hello Xris and Max!";
+    show_debug_message(str_text);
     
     //every frame, 10 units are added to x, a built-in variable.
     x += 10;
